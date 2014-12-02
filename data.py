@@ -1,9 +1,4 @@
-scores = {}
-result_f = open("results.txt")
-for line in result_f:
-    (name,score) = line.split()
-    scores[score] = name
-result_f.close()
-print("The top scores were:")
-for each_score in sorted(scores.keys(),reverse = True):
-        print('Surfer ' + scores[each_score] + ' scored ' + each_score)
+line = "101;Johnny 'wave-boy' Uones;usa;8.32;Fish;21"
+s = {}
+(s['id'],s['name'],s['country'],s['average'],s['board'],s['age']) = line.split(";")
+print('ID:  ' + s['id'])
