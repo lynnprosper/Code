@@ -1,5 +1,6 @@
 import sqlite3
 def find_details(id2find):
+
     db = sqlite3.connect("surfersDB.sdb")
     db.row_factory = sqlite3.Row
     cursor = db.cursor()
@@ -11,8 +12,12 @@ def find_details(id2find):
             s['id'] = str(row['id'])
             s['name'] = row['name']
             s['country'] = row['country']
-            s['average'] = str(row['average']
+            s['average'] = str(row['average'])
+            s['board'] = row['board']
+            s['age'] = str(row['age'])
+            cursor.close()
             return(s)
+
     cursor.close()
     return({})
             
@@ -25,3 +30,4 @@ if len(surfer) > 0:
     print("Average:   " + surfer['average'])
     print("Board:     " + surfer['board'])
     print("Age:       " + surfer['age'])
+
