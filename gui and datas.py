@@ -1,14 +1,19 @@
 def save_data():
-    fileD = open("deliveries.txt", "a")
-    fileD.write("Depot:\n")
-    fileD.write("%s\n" % depot.get())
-    fileD.write("Desciption:\n")
-    fileD.write("%s\n" % description.get())
-    fileD.write("Address:\n")
-    fileD.write("%s\n" % address.get("1.0", END))
-    depot.delete(0, END)
-    description.delete(0, END)
-    address.delete("1.0", END)
+    try:
+        fileD = open("deliveries.txt", "a")
+        fileD.write("Depot:\n")
+        fileD.write("%s\n" % depot.get())
+        fileD.write("Desciption:\n")
+        fileD.write("%s\n" % description.get())
+        fileD.write("Address:\n")
+        fileD.write("%s\n" % address.get("1.0", END))
+        depot.delete(0, END)
+        description.delete(0, END)
+        address.delete("1.0", END)
+    except Exception as ex:
+        tkinter.messagebox.showerror("Error!", "Can't write to the file \n %s" % ex)
+        #app.title("Can't write to the file %s" % ex)
+        
 
 def read_depots(file):
     depots=[]
@@ -18,6 +23,7 @@ def read_depots(file):
     return depots
 
 from tkinter import *
+import tkinter.messagebox
 
 app = Tk()
 app.title('Head-Ex Deliveries')
