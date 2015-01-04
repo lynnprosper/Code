@@ -3,6 +3,7 @@ from sound_panel import *
 import pygame.mixer
 
 app = Tk()
+
 app.title("Head First Mix")
 
 mixer = pygame.mixer
