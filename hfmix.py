@@ -1,7 +1,6 @@
 from tkinter import *
-from sound_panel import create_gui
+from sound_panel2 import *
 import pygame.mixer
-
 app = Tk()
 app.title("Head First Mix")
 
@@ -12,8 +11,8 @@ create_gui(app, mixer, "50459_M_RED_Nephlimizer.wav")
 create_gui(app, mixer, "49119_M_RED_HardBouncer.wav")
 
 def shutdown():
-        track.stop()
-        app.destroy()
+    track.stop()
+    app.destroy()
 
 
 app.protocol("WM_DELETE_WINDOW", shutdown)

@@ -2,8 +2,8 @@ from tkinter import *
 import pygame.mixer
 
 class SoundPanel(Frame):
-    def _init_(self, app, mixer, sound_file):
-        Frame._init_(self, app)
+    def __init__(self, app, mixer, sound_file):
+        Frame.__init__(self, app)
         self.track = mixer.Sound(sound_file)
         self.track_playing = IntVar()
         track_button = Checkbutton(self, variable = self.track_playing,
